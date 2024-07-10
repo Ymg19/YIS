@@ -1,0 +1,66 @@
+
+<html>
+<head>
+	<title>OPT Message</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="template">
+		<h2>Payment Confirmation: <span id="order-number"></span></h2>
+		<p>Dear user<span id="user-name"></span>,</p>
+		<p>Payment Received!</p>
+		<p>Thank you for paying <span id="amount"></span> for your ward's fees. Your transaction has been processed successfully.</p>
+		<p>Reference Number: <span id="reference-number"></span></p>
+		<p>If you have any questions, please contact us at <span id="contact-email"></span> or <span id="contact-phone"></span>.</p>
+		<p>Thank you for your continued support.</p>
+		<p>Best regards,</p>
+		<p><span id="school-name"></span></p>
+	</div>
+	
+	<script>
+		const paymentInfo = {
+			orderNumber: 'XXXXXXXX',
+			userName: 'John Doe',
+			amount: '$19,000',
+			referenceNumber: 'REF-XXXXX',
+			contactEmail: 'support@email.com',
+			contactPhone: '555-555-5555',
+			schoolName: 'XYZ School'
+		};
+		const template = document.getElementById('template');
+		Object.keys(paymentInfo).forEach(key => {
+			const element = document.getElementById(key);
+			element.innerText = paymentInfo[key];
+		});
+	</script>
+</body>
+</html>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+#template {
+	max-width: 600px;
+	margin: 40px auto;
+	padding: 20px;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	margin-top: 0;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+span {
+	font-weight: bold;
+	color: #333;
+}
+</style>
